@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 const filePath = "userdata.txt";
-const data = "This is an example text file.";
+const data = "This is a text file";
 async function createFile(data) {
     try{
 await fs.writeFile(filePath, data, "utf8");

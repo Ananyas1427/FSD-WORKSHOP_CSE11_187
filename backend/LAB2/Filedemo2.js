@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 const filePath = "userdata.json";
-const data ={"name":"John"};
+const data ={"message":"Hello world"};
 async function createFile(data) {
     try{
 await fs.writeFile(filePath, data, "utf8");
