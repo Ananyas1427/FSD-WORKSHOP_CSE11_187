@@ -1,56 +1,251 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-.home {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1e293b;
 }
 
-.hero-image {
-  width: 100%;
-  height: 180vh;
-  object-fit: cover;
+/* Main Container */
+.container {
+  width: 92%;
+  max-width: 1150px;
+  margin: 45px auto;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Heading */
+h1 {
   text-align: center;
+  font-size: 36px;
+  color: #334155;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+
+/* Method Buttons */
+.methods {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.methods button {
+  padding: 11px 24px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: white;
+  color: #475569;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Subtle method colours */
+.methods button:nth-child(1) {
+  color: #15803d;
+}
+
+.methods button:nth-child(2) {
+  color: #c2410c;
+}
+
+.methods button:nth-child(3) {
+  color: #6d28d9;
+}
+
+.methods button:nth-child(4) {
+  color: #dc2626;
+}
+
+.methods button:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+}
+
+.methods button.active {
+  background: #4f46e5;
   color: white;
-  background: rgba(247, 132, 121, 0.5);
-  padding: 40px;
-  border-radius: 10px;
+  border-color: #4f46e5;
 }
 
-.hero-content h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+/* Main Layout */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+/* Cards */
+.box {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(30, 41, 59, 0.08);
+}
+
+.box:first-child {
+  border-top: 4px solid #6366f1;
+}
+
+.box:last-child {
+  border-top: 4px solid #818cf8;
+}
+
+.box h2 {
+  margin: 0 0 22px;
+  font-size: 22px;
+  color: #334155;
+}
+
+/* URL Area */
+.url-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+select {
+  width: 105px;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8faff;
+  color: #4f46e5;
+  font-weight: 600;
+  outline: none;
+}
+
+select:focus {
+  border-color: #6366f1;
+}
+
+input {
+  flex: 1;
+  padding: 11px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Request Body */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #475569;
+}
+
+textarea {
+  width: 100%;
+  height: 190px;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  resize: vertical;
+  outline: none;
+  background: #f8fafc;
+  color: #334155;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+  background: white;
+}
+
+/* Send Button */
+.send {
+  margin-top: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.send:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+/* Status */
+.status {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  color: #475569;
+}
+
+.status b {
+  color: #15803d;
+}
+
+/* Response */
+pre {
+  background: #172033;
+  color: #dbeafe;
+  padding: 18px;
+  min-height: 250px;
+  max-height: 350px;
+  overflow: auto;
+  white-space: pre-wrap;
+  border-radius: 9px;
+  font-family: Consolas, monospace;
+  font-size: 13px;
   line-height: 1.6;
 }
 
-.hero-content button {
-  padding: 12px 30px;
-  font-size: 18px;
-  background-color: #f9de5a;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+/* Scrollbar */
+pre::-webkit-scrollbar {
+  width: 7px;
 }
 
-.hero-content button:hover {
-  background-color: #e65c00;
+pre::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+
+  .container {
+    width: 94%;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .url-box {
+    flex-direction: column;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .methods {
+    flex-wrap: wrap;
+  }
 }
